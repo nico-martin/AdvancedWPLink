@@ -48,6 +48,12 @@ Please feel free to contact me: nico@vir2al.ch
 
 == Changelog ==
 
+= 1.0.0 =
+* Add a title-Tag to your links
+* Hide styling options if no option is set
+* Added german translation
+* improved responiveness
+
 = 0.9.1 =
 * Enable/Disable inline links
 * Add custom link classes
