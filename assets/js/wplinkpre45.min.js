@@ -1,0 +1,1 @@
+jQuery(function(){tinymce.PluginManager.add("wplinkpre45",function(n,i){n&&n.addCommand("WP_Link",function(){window.wpLink.open(n.id)})})});

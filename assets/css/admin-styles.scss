@@ -1,0 +1,114 @@
+@import "compass/css3";
+
+
+#wp-link {
+	select {
+		//margin-left: 4px;margin-top: 5px;
+		@include box-sizing(border-box);
+		margin-top: 5px;
+    	width: 70%;
+	}
+
+    @media screen and (max-width: 782px){
+    	select {
+		    padding: 6px 10px;
+		    height:inherit;font-size:16px;
+		}
+		.link-follow { 
+			margin-top:4px;
+		}
+    }
+}
+
+#awl_author {
+	a {
+		text-decoration: none;
+		font-style: italic;
+		font-weight: bold;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+
+table#awl_settings_form_table {
+	tr {
+		vertical-align: top;
+		th small {
+			font-weight: 400;
+			display: block;
+			margin-top:0.4em;
+			line-height: 120%;
+			color:#444;
+		}
+		td {
+			label {
+				padding-left:25px;
+				@media screen and (max-width: 782px){
+					padding-left:40px;
+				}
+				display: block;
+				position: relative;
+				line-height:150%;
+				input[type=checkbox]{
+					left:0px;
+					top:0px;
+					margin: 3px 0 0 0;
+					position: absolute;
+					display: inline-block;
+				}
+			}
+			.table-wrap {
+				max-width: calc(100vw - 20px);
+			    overflow-x: auto;
+			    margin-bottom: 10px;
+			    table {
+			        min-width:600px;
+			        margin-bottom: 0px;
+			    }
+			}
+		}
+	}
+
+	table#awl_styling_options {
+		background-color: #fff;
+		border: 1px solid #e5e5e5;
+	    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	    table-layout: auto;
+	    tr {
+	    	td, th {
+	    		padding:15px 10px;
+				border-bottom: 1px solid #e5e5e5;
+				display: table-cell !important;
+				width:auto;
+				input {
+					width:100%;
+				}
+	    	}
+
+	    	&:last-child {
+	    		td {
+					border-bottom-width:0px;
+	    		}
+			}
+	    }
+
+	    @media screen and (max-width: 782px){
+			width:100%;
+	    }
+	}
+	a.awl_remove {
+		display: inline-block;
+		height:22px;line-height:22px;width:22px;
+		@include border-radius(50%);
+		background-color:#a00;
+		text-align:center;
+		color:#fff;
+		span {line-height:22px;}
+		cursor: pointer;
+		&:hover {
+			background-color:red;
+		}
+	}
+}

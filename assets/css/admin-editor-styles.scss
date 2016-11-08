@@ -1,0 +1,17 @@
+@import "compass/css3";
+
+$c_gray : lighten(#000,40%);
+
+a {
+    &.button, &.button-primary {
+        display: inline-block;
+        padding:0.4em 0.5em;
+        border:1px solid $c_gray;
+        color:$c_gray;
+        text-decoration: none;
+    }
+    &.button-primary {
+        background-color:$c_gray;
+        color:#fff;
+    }
+}

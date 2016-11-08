@@ -1,0 +1,142 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced WPLink\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-07 16:18+0000\n"
+"PO-Revision-Date: 2016-11-08 10:18+0000\n"
+"Last-Translator: nico <nico@vir2al.ch>\n"
+"Language-Team: German (Formal)\n"
+"Language: de-DE-formal\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#. URI of the plugin
+msgid "https://wordpress.org/plugins/advanced-wplink/"
+msgstr ""
+
+#. Author of the plugin
+msgid "Nico Martin"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://vir2al.ch/"
+msgstr ""
+
+#. Name of the plugin
+#: advanced-wplink.php:14
+msgid "Advanced WPLink"
+msgstr ""
+
+#: class/AdminPage.php:74
+msgid "Inline Linking Tool"
+msgstr "Inline Linking Tool"
+
+#: class/AdminPage.php:80
+msgid "rel=\"nofollow\" Option"
+msgstr "rel=\"nofollow\" Option"
+
+#: class/AdminPage.php:86
+msgid "Linktitle"
+msgstr "Linktitel"
+
+#: class/AdminPage.php:92
+msgid "wplink Stylings"
+msgstr "wplink Stylings"
+
+#: class/Editor.php:41
+msgid "(no title)"
+msgstr "(kein titel)"
+
+#: class/Editor.php:45
+msgid "No matches found."
+msgstr "Keine Resultate gefunden."
+
+#: class/Activate.php:75
+#, php-format
+msgid "The plugin “%1$s” requires WordPress %2$s or higher!"
+msgstr "Das Plugin “%1$s” benötigt WordPress %2$s oder höher!"
+
+#: class/AdminPage.php:24 class/AdminPage.php:60
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: class/AdminPage.php:50
+msgid "Settings saved."
+msgstr "Einstellungen gespeichert."
+
+#: class/AdminPage.php:52
+msgid "Settings are not saved."
+msgstr "Die Einstellungen konnten nicht gespeichert werden."
+
+#: class/AdminPage.php:76
+msgid "Remove the inline linking tool from your WordPress Editor."
+msgstr "Inline Linking Tool vom WordPress Editor entfernen."
+
+#: class/AdminPage.php:82
+msgid "Add a \"rel=nofollow\" option to the link modal inside the Editor."
+msgstr "rel=\"nofollow\" Option zum link modal im Editor hinzufügen."
+
+#: class/AdminPage.php:88
+msgid ""
+"Add a \"title\" input field to the link modal inside the Editor. This way "
+"you can add a title attribute to your link."
+msgstr ""
+"\"title\" input Feld zum link modal im Editor hinzufügen. Auf diese Art "
+"können Sie Ihrem Link ein \"title\" Attribut mitgeben."
+
+#: class/AdminPage.php:93
+msgid "To assign two classes you can use a space between two classes/words"
+msgstr ""
+"Um zwei Klassen zu nutzen, können Sie diese mit einem Leerschlag trennen."
+
+#: class/AdminPage.php:97
+msgid "Name"
+msgstr "Bezeichnung"
+
+#: class/AdminPage.php:98
+msgid "Selector (class)"
+msgstr "Selektor (class)"
+
+#: class/AdminPage.php:119
+msgid "Add Element"
+msgstr "Element hinzufügen"
+
+#: class/AdminPage.php:125
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: class/AdminPage.php:131
+#, php-format
+msgid "“%1$s” by %2$s"
+msgstr "“%1$s” von %2$s"
+
+#: class/Editor.php:38
+msgid "Insert/edit link"
+msgstr "Link einfügen/bearbeiten"
+
+#: class/Editor.php:39
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: class/Editor.php:40
+msgid "Add Link"
+msgstr "Link hinzufügen"
+
+#: class/Editor.php:42
+msgid "Link-Title"
+msgstr "Link-Titel"
+
+#: class/Editor.php:43
+msgid "The html title attribute (optional)"
+msgstr "Das html \"title\" Attribut (optional)"
+
+#. Description of the plugin
+msgid ""
+"This Plugin adds several enhancements to the WP-Link Modal inside the "
+"TinyMCE and gives you the possibility to disable the wp inline link tool."
+msgstr ""
+"Dieses Plugin fügt einige Verbesserungen zum WP-Link Modal hinzu und gibt "
+"Ihnen die Möglichkeit, das wp inline link tool zu deaktivieren."
