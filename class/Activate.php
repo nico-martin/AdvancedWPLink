@@ -4,6 +4,7 @@ class Activate {
 
 	public function __construct(){
         register_activation_hook(awl_file, [$this, 'activate']);
+        add_action( 'plugins_loaded', [$this, 'activate']);
         register_activation_hook(awl_file, [$this, 'check_version']);
         add_action( 'admin_init', [$this, 'check_version']);
     }
@@ -15,44 +16,46 @@ class Activate {
 			$blog_ids = $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs" );
 			foreach ($blog_ids as $blog_id){
 	            switch_to_blog($blog_id);
-	            $this->create_options();
+	            $this->update_options();
 	            restore_current_blog();
 	        }
 		}else{
-			$this->create_options();
+			$this->update_options();
 		}
 
 		add_action('wpmu_new_blog', [$this,'create_blog']);
     }
 
-    public function create_options(){
+    public function update_options(){
 
-		$settings = [
-			'inline_link' => 'disabled',
-			'rel' => 'enabled',
-			'title' => 'disabled',
-			'wplink_styling' => '[{"name":"Button","selector":"button"},{"name":"Button Primary","selector":"button-primary"}]'
-		];
+        if(get_option('nm-awl_version')==''){
+    		$settings = [
+    			'inline_link' => 'disabled',
+    			'rel' => 'enabled',
+    			'title' => 'disabled',
+    			'wplink_styling' => '[{"name":"Button","selector":"button"},{"name":"Button Primary","selector":"button-primary"}]'
+    		];
 
-		if(get_option('nm-awl_options')!=''){
-			$current_settings = get_option('nm-awl_options');
-		}elseif(get_option('vtlawl_options')!=''){
-			$current_settings = get_option('vtlawl_options');
-		}else{
-			$current_settings = [];
-		}
+    		if(get_option('nm-awl_options')!=''){
+    			$current_settings = get_option('nm-awl_options');
+    		}elseif(get_option('vtlawl_options')!=''){
+    			$current_settings = get_option('vtlawl_options');
+    		}else{
+    			$current_settings = [];
+    		}
 
-		$settings = wp_parse_args(get_option('vtlawl_options'),$settings);
-    		
-    	add_option('nm-awl_options', $settings);
-    	add_option('nm-awl_version', awl_version);
+    		$settings = wp_parse_args(get_option('vtlawl_options'),$settings);
+        		
+        	add_option('nm-awl_options', $settings);
+        	add_option('nm-awl_version', awl_version);
+        }
     }
 
     public function create_blog($blog_id, $user_id, $domain, $path, $site_id, $meta){
 
     	if ( is_plugin_active_for_network( awl_folder.'/'.awl__folder.'.php' ) ) {
 	        switch_to_blog($blog_id);
-	        $this->create_options();
+	        $this->update_options();
 	        restore_current_blog();
 	    }
     }

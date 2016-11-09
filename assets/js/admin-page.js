@@ -27,7 +27,7 @@ function awl_change_element(input){
     var $input = $(input);
     var value = $input.val();
     if($input.attr('name')=='selector'){
-        value = value.replace(/[^a-z0-9_\s-]/gi, '').replace(/[\s-]+/gi,' ');
+        value = value.replace(/[^a-z0-9_\s-]/gi, '');
         $input.val(value);
     }
 
