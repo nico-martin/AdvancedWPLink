@@ -48,7 +48,7 @@ class Editor {
 
 	public function inlinelink_pre_45($plugins){
 		if($this->inline_is_disabled()){
-			$plugins['wplinkpre45'] = awl_dir.'/assets/js/wplinkpre45.js';
+			$plugins['wplinkpre45'] = awl_dir.'/assets/js/wplinkpre45.min.js';
 		}
 		return $plugins;
 	}

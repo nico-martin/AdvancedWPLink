@@ -5,8 +5,8 @@ Tags: WPLink, WP-Link, TinyMCE, inline link, inline links, Inline Linking
 Requires at least: 4.5
 Tested up to: 4.7
 Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 This Plugin adds several enhancements to the WP-Link Modal inside the TinyMCE and gives you the possibility to disable the wp inline link tool.
 
@@ -21,8 +21,8 @@ In this first version you are able to:
 3. Add a `rel="nofollow"` to your links
 4. Add a title-Tag to your links
 
-If you have ideas for improvements, feel free to contact me:
-nico@vir2al.ch
+If you have ideas for improvements, feel free to dive into the code:
+[https://github.com/nico-martin/AdvancedWPLink/](https://github.com/nico-martin/AdvancedWPLink/)
 
 == Installation ==
 
@@ -44,15 +44,17 @@ e.g.
 
 = No questions yet =
 
-Please feel free to contact me: nico@vir2al.ch
+[https://github.com/nico-martin/AdvancedWPLink/issues/](https://github.com/nico-martin/AdvancedWPLink/issues/)
 
 == Changelog ==
 
 = 1.0.0 =
+* complete rebuild from scratch
 * Add a title-Tag to your links
 * Hide styling options if no option is set
 * Added german translation
 * improved responiveness
+* minify all the things!
 
 = 0.9.1 =
 * Enable/Disable inline links
