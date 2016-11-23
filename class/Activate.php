@@ -79,4 +79,5 @@ class Activate {
         </div>';
     }
 }
-?>
+
+new Activate();
