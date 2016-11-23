@@ -134,3 +134,5 @@ class AdminPage {
 	    <?php
 	}
 }
+
+new AdminPage();
