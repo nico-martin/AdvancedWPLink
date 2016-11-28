@@ -1,35 +1,35 @@
 <?php
 /*
-Plugin Name:    Advanced WPLink
-Plugin URI:     https://wordpress.org/plugins/advanced-wplink/
-Description:    This Plugin adds several enhancements to the WP-Link Modal inside the TinyMCE and gives you the possibility to disable the wp inline link tool.
+Plugin Name:	Advanced WPLink
+Plugin URI:		https://wordpress.org/plugins/advanced-wplink/
+Description: 	This Plugin adds several enhancements to the WP-Link Modal inside the TinyMCE and gives you the possibility to disable the wp inline link tool.
 Version: 		1.1.0
-Author:         Nico Martin
-Author URI:     https://vir2al.ch/
-Text Domain:  	awl
+Author:			Nico Martin
+Author URI: 	https://vir2al.ch/
+Text Domain:	awl
 */
 
 if(version_compare(PHP_VERSION, '5.3', '<')) {
 
-    function awl_compatability_warning(){
-        echo '<div class="error"><p>'.sprintf(
-            __('“%1$s” requires PHP %2$s (or newer) to function properly. Your site is using PHP %3$s. Please upgrade. The plugin has been automatically deactivated.', 'awl'),
-            __('Advanced WPLink','awl'),
-            '5.3',
-            PHP_VERSION,
-        ).'</p></div>';
-        if (isset($_GET['activate'])) {
-            unset($_GET['activate']);
-        }
-    }
-    add_action('admin_notices', 'awl_compatability_warning');
+	function awl_compatability_warning(){
+		echo '<div class="error"><p>'.sprintf(
+			__('“%1$s” requires PHP %2$s (or newer) to function properly. Your site is using PHP %3$s. Please upgrade. The plugin has been automatically deactivated.', 'awl'),
+			__('Advanced WPLink','awl'),
+			'5.3',
+			PHP_VERSION,
+		).'</p></div>';
 
-    function awl_deactivate_self(){
-        deactivate_plugins(plugin_basename(__FILE__));
-    }
-    add_action('admin_init', 'awl_deactivate_self');
+		if (isset($_GET['activate'])) {
+			unset($_GET['activate']);
+		}
+	}
+	add_action('admin_notices', 'awl_compatability_warning');
 
-    return;
+	function awl_deactivate_self(){
+		deactivate_plugins(plugin_basename(__FILE__));
+	}
+	add_action('admin_init', 'awl_deactivate_self');
+	return;
 
 }else{
 
