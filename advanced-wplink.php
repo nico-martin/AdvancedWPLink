@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name:	Advanced WPLink
-Plugin URI:		https://wordpress.org/plugins/advanced-wplink/
-Description:	This Plugin adds several enhancements to the WP-Link Modal inside the TinyMCE and gives you the possibility to disable the wp inline link tool.
-Version:		1.1.0
-Author:			Nico Martin
-Author URI:		https://vir2al.ch/
-Text Domain:	awl
+Plugin Name: Advanced WPLink
+Plugin URI: https://wordpress.org/plugins/advanced-wplink/
+Description: This Plugin adds several enhancements to the WP-Link Modal inside the TinyMCE and gives you the possibility to disable the wp inline link tool.
+Version: 1.1.0
+Author: Nico Martin
+Author URI: https://vir2al.ch/
+Text Domain: awl
 */
 
 if(version_compare(PHP_VERSION, '5.3', '<')) {
