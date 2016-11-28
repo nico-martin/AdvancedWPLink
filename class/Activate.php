@@ -3,6 +3,7 @@ namespace NM\AdvancedWPLink;
 class Activate {
 
 	public function __construct(){
+        
         register_activation_hook(awl_file,  array($this, 'activate'));
         add_action( 'plugins_loaded',       array($this, 'activate'));
         register_activation_hook(awl_file,  array($this, 'check_version'));

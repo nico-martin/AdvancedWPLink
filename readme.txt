@@ -69,4 +69,5 @@ e.g.
 * Add rel="nofollow"
 
 == Upgrade Notice ==
-none
+* Added PHP 5.3 Support
+* Added PHP version check

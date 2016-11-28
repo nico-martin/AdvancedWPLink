@@ -33,7 +33,7 @@ if(version_compare(PHP_VERSION, '5.3', '<')) {
 
 }else{
 
-	define('awl_version','1.0.1');
+	define('awl_version','1.1.0');
 	define('awl_min_wp_version','4.5');
 	define('awl_name',__('Advanced WPLink','awl'));
 
