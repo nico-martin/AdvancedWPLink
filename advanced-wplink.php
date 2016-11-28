@@ -16,7 +16,7 @@ if(version_compare(PHP_VERSION, '5.3', '<')) {
 			__('“%1$s” requires PHP %2$s (or newer) to function properly. Your site is using PHP %3$s. Please upgrade. The plugin has been automatically deactivated.', 'awl'),
 			__('Advanced WPLink','awl'),
 			'5.3',
-			PHP_VERSION,
+			PHP_VERSION
 		).'</p></div>';
 
 		if (isset($_GET['activate'])) {

@@ -4,7 +4,7 @@ Donate link: https://www.paypal.me/NicoMartin
 Tags: WPLink, WP-Link, TinyMCE, inline link, inline links, Inline Linking
 Requires at least: 4.5
 Tested up to: 4.7
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -47,6 +47,10 @@ e.g.
 [https://github.com/nico-martin/AdvancedWPLink/issues/](https://github.com/nico-martin/AdvancedWPLink/issues/)
 
 == Changelog ==
+
+= 1.1.0 =
+* Added PHP 5.3 Support
+* Added PHP version check
 
 = 1.0.1 =
 * Bugfixes
