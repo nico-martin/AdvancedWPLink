@@ -61,4 +61,5 @@ class Editor {
 		return true;
 	}
 }
-?>
+
+new Editor();
