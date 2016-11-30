@@ -10,35 +10,42 @@ class AdminPage {
 	}
 
 	public function admin_menu(){
+
+		global $awl_settings;
 		add_options_page(
-			awl_name,
-			awl_name,
+			$awl_settings['name'],
+			$awl_settings['name'],
 			'manage_options',
-			awl_folder.'-settings',
+			$awl_settings['dirname'].'-settings',
 	        array($this,'options_page')
 	    );
 	}
 
 	public function register_plugin_links($links, $file){
-		if(strpos($file, awl_folder) !== false) {
-			$links[] = '<a href="options-general.php?page='.awl_folder.'-settings">'.__('Settings', 'awl').'</a>';
+
+		global $awl_settings;
+		if(strpos($file, $awl_settings['dirname']) !== false) {
+			$links[] = '<a href="options-general.php?page='.$awl_settings['dirname'].'-settings">'.__('Settings', 'awl').'</a>';
 		}
 		return $links;
 	}
 
 	public function admin_scripts($hook){
-		if($hook!='settings_page_'.awl_folder.'-settings'){
+
+		global $awl_settings;
+		if($hook!='settings_page_'.$awl_settings['dirname'].'-settings'){
 			return;
 		}
-		wp_enqueue_script(awl_folder.'_script', awl_dir.'/assets/js/admin-page.min.js');
-		wp_enqueue_style(awl_folder.'_styles', awl_dir.'/assets/css/admin-styles.css', false, awl_version);
+		wp_enqueue_script($awl_settings['dirname'].'_script', $awl_settings['dir'].'/assets/js/admin-page.min.js');
+		wp_enqueue_style($awl_settings['dirname'].'_styles', $awl_settings['dir'].'/assets/css/admin-styles.css', false, $awl_settings['version']);
 	}
 
 	public function options_page(){
 		
+		global $awl_settings;
 		$display_add_options = $message = $error = $result = '';
 
-		if(isset($_POST['awl_options_submit']) && check_admin_referer(awl_folder,'awl_nonce_name')){ 
+		if(isset($_POST['awl_options_submit']) && check_admin_referer($awl_settings['dirname'],'awl_nonce_name')){ 
 
 			/* Update settings */
 			$awl_options['inline_link'] = isset($_POST['awl_inline_link'])?$_POST['awl_inline_link']:'enabled';
@@ -58,7 +65,7 @@ class AdminPage {
 	    ?>
 		<div class="wrap">
 
-			<h2><?php echo awl_name; ?> <?php _e('Settings','awl'); ?></h2>
+			<h2><?php echo $awl_settings['name']; ?> <?php _e('Settings','awl'); ?></h2>
 			<div class="updated fade" <?php if( empty( $message ) ) echo "style=\"display:none\""; ?>>
 				<p><strong><?php echo $message; ?></strong></p>
 			</div>
@@ -127,11 +134,11 @@ class AdminPage {
 				<p class="submit">
 					<input type="submit" id="settings-form-submit" class="button-primary" value="<?php _e( 'Save Changes', 'awl' ) ?>" />
 					<input type="hidden" name="awl_options_submit" value="submit" />
-					<?php wp_nonce_field(awl_folder,'awl_nonce_name'); ?>
+					<?php wp_nonce_field($awl_settings['dirname'],'awl_nonce_name'); ?>
 				</p>
 			</form>
 		</div>
-		<p id="awl_author"><?php printf(__('“%1$s” by %2$s','awl'),awl_name,'<a href="https://twitter.com/nic_o_martin" target="_blank">Nico Martin</a>'); ?></p>
+		<p id="awl_author"><?php printf(__('“%1$s” by %2$s','awl'),$awl_settings['name'],'<a href="https://twitter.com/nic_o_martin" target="_blank">Nico Martin</a>'); ?></p>
 		<?php
 	}
 }

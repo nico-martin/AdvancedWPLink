@@ -11,7 +11,9 @@ class Editor {
 	}
 
 	public function admin_editor_style(){
-		add_editor_style(awl_dir.'/assets/css/admin-editor-styles.css');
+
+		global $awl_settings;
+		add_editor_style($awl_settings['dir'].'/assets/css/admin-editor-styles.css');
 	}
 
 	public function admin_head_js(){
@@ -25,13 +27,14 @@ class Editor {
 
 	public function scripts(){
 
-		wp_enqueue_style('awl_admin_styles_css', awl_dir.'/assets/css/admin-styles.css', false, awl_version);
+		global $awl_settings;
+		wp_enqueue_style('awl_admin_styles_css', $awl_settings['dir'].'/assets/css/admin-styles.css', false, $awl_settings['version']);
 
 		// Disable wplink
 		wp_deregister_script('wplink');
 
 		// Register a new script file to be linked
-		wp_register_script('wplink', awl_dir.'/assets/js/wplink.min.js', array('jquery', 'wpdialogs'), false, awl_version);
+		wp_register_script('wplink', $awl_settings['dir'].'/assets/js/wplink.min.js', array('jquery', 'wpdialogs'), false, $awl_settings['version']);
 		wp_localize_script('wplink', 'wpLinkL10n', array(
 			'title' => __('Insert/edit link','awl'),
 			'update' => __('Update','awl'),
@@ -44,8 +47,10 @@ class Editor {
 	}
 
 	public function inlinelink_pre_45($plugins){
+
+		global $awl_settings;
 		if($this->inline_is_disabled()){
-			$plugins['wplinkpre45'] = awl_dir.'/assets/js/wplinkpre45.min.js';
+			$plugins['wplinkpre45'] = $awl_settings['dir'].'/assets/js/wplinkpre45.min.js';
 		}
 		return $plugins;
 	}

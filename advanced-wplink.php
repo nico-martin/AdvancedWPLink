@@ -3,7 +3,7 @@
 Plugin Name: Advanced WPLink
 Plugin URI: https://wordpress.org/plugins/advanced-wplink/
 Description: This Plugin adds several enhancements to the WP-Link Modal inside the TinyMCE and gives you the possibility to disable the wp inline link tool.
-Version: 1.1.0
+Version: 1.2.0
 Author: Nico Martin
 Author URI: https://vir2al.ch/
 Text Domain: awl
@@ -33,19 +33,25 @@ if(version_compare(PHP_VERSION, '5.3', '<')) {
 
 }else{
 
-	define('awl_version','1.1.0');
-	define('awl_min_wp_version','4.5');
-	define('awl_name',__('Advanced WPLink','awl'));
+	$awl_settings = array(
+		'name'		=> 'Advanced WPLink',
+		'textdomain'=> 'awl',
 
-	define('awl_folder','advanced-wplink');
-	define('awl_dir',plugins_url().'/'.awl_folder);
-	define('awl_file',awl_folder.'/'.awl_folder.'.php');
+		'version'	=> '1.2.0',
+		'wp_version'=> '4.5',
+
+		'dirname'	=> dirname(plugin_basename(__FILE__)),
+		'dir'		=> plugins_url('/advanced-wplink'),
+		'plugin'	=> plugin_basename(__FILE__)
+	);
 
 	add_action('plugins_loaded', function(){
-		load_plugin_textdomain('awl', false, dirname(plugin_basename(__FILE__)).'/languages/'); 
+
+		global $awl_settings;
+		load_plugin_textdomain($awl_settings['textdomain'], false, $awl_settings['dirname'].'/languages/'); 
 	});
 
-	//Admin Page
+	//Activate
 	require_once 'class/Activate.php';
 
 	//Admin Page

@@ -4,10 +4,11 @@ class Activate {
 
 	public function __construct(){
         
-        register_activation_hook(awl_file,  array($this, 'activate'));
-        add_action( 'plugins_loaded',       array($this, 'activate'));
-        register_activation_hook(awl_file,  array($this, 'check_version'));
-        add_action( 'admin_init',           array($this, 'check_version'));
+        global $awl_settings;
+        register_activation_hook($awl_settings['file'], array($this, 'activate'));
+        add_action( 'plugins_loaded',                   array($this, 'activate'));
+        register_activation_hook($awl_settings['file'], array($this, 'check_version'));
+        add_action( 'admin_init',                       array($this, 'check_version'));
     }
 
     public function activate($network_wide){
@@ -29,7 +30,9 @@ class Activate {
 
     public function update_options(){
 
+        global $awl_settings;
         if(get_option('nm-awl_version')==''){
+
             $settings = array(
     			'inline_link' => 'disabled',
     			'rel' => 'enabled',
@@ -48,13 +51,14 @@ class Activate {
     		$settings = wp_parse_args(get_option('vtlawl_options'),$settings);
         		
         	add_option('nm-awl_options', $settings);
-        	add_option('nm-awl_version', awl_version);
+        	add_option('nm-awl_version', $awl_settings['version']);
         }
     }
 
     public function create_blog($blog_id, $user_id, $domain, $path, $site_id, $meta){
 
-    	if ( is_plugin_active_for_network( awl_folder.'/'.awl__folder.'.php' ) ) {
+        global $awl_settings;
+    	if(is_plugin_active_for_network($awl_settings['file'])){
             switch_to_blog($blog_id);
             $this->update_options();
             restore_current_blog();
@@ -62,12 +66,14 @@ class Activate {
     }
 
     public function check_version() {
-        // Check that this plugin is compatible with the current version of WordPress
-        if(version_compare( $GLOBALS['wp_version'], awl_min_wp_version, '<' )) {
-            
-            if(is_plugin_active(awl_folder.'.php')){
 
-                deactivate_plugins(awl_folder.'.php');
+        global $awl_settings;
+        // Check that this plugin is compatible with the current version of WordPress
+        if(version_compare( $GLOBALS['wp_version'], $awl_settings['wp_version'], '<' )) {
+
+            if(is_plugin_active($awl_settings['plugin'])){
+
+                deactivate_plugins($awl_settings['plugin']);
                 add_action('admin_notices', array($this, 'disabled_notice'));
                 
                 if(isset( $_GET['activate'])) {
@@ -78,8 +84,10 @@ class Activate {
     }
     
     public function disabled_notice() {
+
+        global $awl_settings;
         echo '<div class="notice notice-error is-dismissible">
-            <p>' .sprintf( __('The plugin “%1$s” requires WordPress %2$s or higher!', 'awl'),awl_name,awl_min_wp_version).'</p>
+            <p>' .sprintf( __('The plugin “%1$s” requires WordPress %2$s or higher!', 'awl'), $awl_settings['name'], $awl_settings['wp_version']).'</p>
         </div>';
     }
 }
