@@ -37,19 +37,39 @@ if(version_compare(PHP_VERSION, '5.3', '<')) {
 		'name'		=> 'Advanced WPLink',
 		'textdomain'=> 'awl',
 
-		'version'	=> '1.2.0',
 		'wp_version'=> '4.5',
+		'version'	=> '0',
 
 		'dirname'	=> dirname(plugin_basename(__FILE__)),
 		'dir'		=> plugins_url('/advanced-wplink'),
 		'plugin'	=> plugin_basename(__FILE__)
 	);
 
+	/**
+	 * Get Plugin Version
+	 */
+
+	if (!function_exists('get_plugins')) {
+        require_once ABSPATH.'wp-admin/includes/plugin.php';
+    }
+
+    $plugin_folder = get_plugins('/'.plugin_basename(dirname(__FILE__)));
+    $plugin_file = basename((__FILE__));
+    $awl_settings['version'] = $plugin_folder[$plugin_file]['Version'];
+
+    /**
+     * load textdomain
+     */
+
 	add_action('plugins_loaded', function(){
 
 		global $awl_settings;
 		load_plugin_textdomain($awl_settings['textdomain'], false, $awl_settings['dirname'].'/languages/'); 
 	});
+
+	/**
+	 * Load classes
+	 */
 
 	//Activate
 	require_once 'class/Activate.php';
