@@ -354,7 +354,6 @@ var wpLink;
                 awlRel.push('noreferrer');  
             }
             // End Advanced WPLink
-            console.log(awlRel.join(' '));
 
             var atts = {
                 href: $.trim( inputs.url.val() ),
