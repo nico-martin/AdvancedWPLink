@@ -14,7 +14,7 @@ if(version_compare(PHP_VERSION, '5.3', '<')) {
 	function awl_compatability_warning(){
 		echo '<div class="error"><p>'.sprintf(
 			__('“%1$s” requires PHP %2$s (or newer) to function properly. Your site is using PHP %3$s. Please upgrade. The plugin has been automatically deactivated.', 'awl'),
-			__('Advanced WPLink','awl'),
+			'Advanced WPLink',
 			'5.3',
 			PHP_VERSION
 		).'</p></div>';
