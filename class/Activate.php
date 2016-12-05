@@ -5,13 +5,13 @@ class Activate {
 	public function __construct(){
         
         global $awl_settings;
-        register_activation_hook($awl_settings['file'], array($this, 'activate'));
-        add_action( 'plugins_loaded',                   array($this, 'activate'));
-        register_activation_hook($awl_settings['file'], array($this, 'check_version'));
-        add_action( 'admin_init',                       array($this, 'check_version'));
+        add_action( 'plugins_loaded',   array($this, 'activate'));
+        add_action( 'admin_init',       array($this, 'check_version'));
     }
 
     public function activate($network_wide){
+
+        update_option( 'test', 'te');
 
     	if(is_multisite() && $network_wide) {
 			global $wpdb;
