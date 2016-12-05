@@ -276,7 +276,7 @@ var wpLink;
                     inputs.openInNewTab.prop( 'checked', '_blank' === editor.dom.getAttrib( linkNode, 'target' ) );
                     
                     // Advanced WPLink
-                    inputs.fsRelNofollow.prop("checked", "nofollow" === editor.dom.getAttrib(linkNode, "rel")), 
+                    inputs.fsRelNofollow.prop("checked", editor.dom.getAttrib(linkNode, "rel").indexOf("nofollow")>=0), 
                     inputs.fsCustomStyles.find('option[value="' + editor.dom.getAttrib(linkNode, "class") + '"]').attr("selected", "selected"), 
                     inputs.fsLinkTitle.val(editor.dom.getAttrib(linkNode, "title")), 
                     // End Advanced WPLink
@@ -342,12 +342,26 @@ var wpLink;
         getAttrs: function() {
             wpLink.correctURL();
 
+            // Advanced WPLink
+            var awlRel = [];
+
+            if(inputs.fsRelNofollow.prop("checked")){
+                awlRel.push('nofollow');  
+            }
+
+            if(inputs.openInNewTab.prop( 'checked' )){
+                awlRel.push('noopener');  
+                awlRel.push('noreferrer');  
+            }
+            // End Advanced WPLink
+            console.log(awlRel.join(' '));
+
             var atts = {
                 href: $.trim( inputs.url.val() ),
                 target: inputs.openInNewTab.prop( 'checked' ) ? '_blank' : '',
 
                 // Advanced WPLink
-                rel: inputs.fsRelNofollow.prop("checked") ? "nofollow" : "",
+                rel: awlRel.join(' '),
                 class: inputs.fsCustomStyles.val(),
                 title: inputs.fsLinkTitle.val()
                 // End Advanced WPLink
