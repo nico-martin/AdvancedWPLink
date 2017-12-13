@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-07 16:18+0000\n"
+"PO-Revision-Date: 2017-12-06 11:15+0100\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.5\n"
+"Last-Translator: \n"
+"Language: fr_FR\n"
+
+#. Name of the plugin
+#: advanced-wplink.php:14
+msgid "Advanced WPLink"
+msgstr ""
+
+#: class/Activate.php:75
+#, php-format
+msgid "The plugin “%1$s” requires WordPress %2$s or higher!"
+msgstr "Cette extension “%1$s” nécessite WordPress %2$s ou plus !"
+
+#: class/AdminPage.php:24 class/AdminPage.php:60
+msgid "Settings"
+msgstr "Paramètres"
+
+#: class/AdminPage.php:50
+msgid "Settings saved."
+msgstr "Paramètres enregistrés."
+
+#: class/AdminPage.php:52
+msgid "Settings are not saved."
+msgstr "﻿Paramètres non enregistrés."
+
+#: class/AdminPage.php:74
+msgid "Inline Linking Tool"
+msgstr "Outil en ligne d’ajout de lien"
+
+#: class/AdminPage.php:76
+msgid "Remove the inline linking tool from your WordPress Editor."
+msgstr ""
+"Désactiver l’outil en ligne d’ajout de lien de l’éditeur de WordPress."
+
+#: class/AdminPage.php:80
+msgid "rel=\"nofollow\" Option"
+msgstr "Option rel=\"nofollow\" "
+
+#: class/AdminPage.php:82
+msgid "Add a \"rel=nofollow\" option to the link modal inside the Editor."
+msgstr ""
+"Ajouter l’option rel=\"nofollow\" à la fenêtre de dialogue de l’éditeur."
+
+#: class/AdminPage.php:86
+msgid "Linktitle"
+msgstr "Titre du lien"
+
+#: class/AdminPage.php:88
+msgid ""
+"Add a \"title\" input field to the link modal inside the Editor. This way "
+"you can add a title attribute to your link."
+msgstr ""
+"Ajouter le champ « Titre » à la fenêtre de dialogue de l’éditeur. Cela "
+"permet d’ajouter un attribut title à votre lien."
+
+#: class/AdminPage.php:92
+msgid "wplink Stylings"
+msgstr "Style du lien"
+
+#: class/AdminPage.php:93
+msgid "To assign two classes you can use a space between two classes/words"
+msgstr "Pour assigner deux classes (CSS), séparez les classe par un espace."
+
+#: class/AdminPage.php:97
+msgid "Name"
+msgstr "Nom"
+
+#: class/AdminPage.php:98
+msgid "Selector (class)"
+msgstr "Sélecteur (class)"
+
+#: class/AdminPage.php:119
+msgid "Add Element"
+msgstr "Ajouter un élément"
+
+#: class/AdminPage.php:125
+msgid "Save Changes"
+msgstr "Sauvegarder les changements"
+
+#: class/AdminPage.php:131
+#, php-format
+msgid "“%1$s” by %2$s"
+msgstr "“%1$s” par %2$s"
+
+#: class/Editor.php:38
+msgid "Insert/edit link"
+msgstr "Ajouter / éditer le lien"
+
+#: class/Editor.php:39
+msgid "Update"
+msgstr "Mettre à jour"
+
+#: class/Editor.php:40
+msgid "Add Link"
+msgstr "Ajouter un lien"
+
+#: class/Editor.php:41
+msgid "(no title)"
+msgstr "(aucun titre)"
+
+#: class/Editor.php:42
+msgid "Link-Title"
+msgstr "Titre du lien"
+
+#: class/Editor.php:43
+msgid "The html title attribute (optional)"
+msgstr "Valeur de l’attribut title (optionnel)"
+
+#: class/Editor.php:45
+msgid "No matches found."
+msgstr "Aucun résultat trouvé."
+
+#. Description of the plugin
+msgid ""
+"This Plugin adds several enhancements to the WP-Link Modal inside the "
+"TinyMCE and gives you the possibility to disable the wp inline link tool."
+msgstr ""
+"Cette extension ajoute des fonctionnalités à la fenêtre de dialogue "
+"« Insérer / modifier un lien » dans l’éditeur de WordPress et vous permet "
+"de désactiver l’outil en ligne d’ajout de lien."
+
+#. URI of the plugin
+msgid "https://wordpress.org/plugins/advanced-wplink/"
+msgstr "https://wordpress.org/plugins/advanced-wplink/"
+
+#. Author of the plugin
+msgid "Nico Martin"
+msgstr "Nico Martin"
+
+#. Author URI of the plugin
+msgid "https://vir2al.ch/"
+msgstr "https://vir2al.ch/"
