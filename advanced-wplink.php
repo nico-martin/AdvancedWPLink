@@ -41,7 +41,7 @@ if(version_compare(PHP_VERSION, '5.3', '<')) {
 		'version'	=> '0',
 
 		'dirname'	=> dirname(plugin_basename(__FILE__)),
-		'dir'		=> plugins_url('/advanced-wplink'),
+		'dir'		=> plugins_url(plugin_basename(__DIR__)),
 		'plugin'	=> plugin_basename(__FILE__)
 	);
 
@@ -64,7 +64,7 @@ if(version_compare(PHP_VERSION, '5.3', '<')) {
 	add_action('plugins_loaded', function(){
 
 		global $awl_settings;
-		load_plugin_textdomain($awl_settings['textdomain'], false, $awl_settings['dirname'].'/languages/'); 
+		load_plugin_textdomain($awl_settings['textdomain'], false, $awl_settings['dirname'].'/languages/');
 	});
 
 	/**
