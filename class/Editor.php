@@ -1,11 +1,14 @@
 <?php
 namespace NM\AdvancedWPLink;
 class Editor {
-	
+
 	public function __construct(){
-		add_action( 'admin_init', 			array($this,'admin_editor_style'));
-		add_action( 'admin_head',			array($this,'admin_head_js'));
-		add_action( 'admin_enqueue_scripts',array($this,'scripts'), 999);
+		add_action( 'admin_init', array($this,'admin_editor_style'));
+		add_action( 'admin_head', array($this,'admin_head_js'));
+
+		// it is over 999999! higher than aioseo
+		add_action( 'wp_enqueue_editor', array($this,'scripts'), 1000000);
+		add_action( 'admin_enqueue_scripts', array($this,'scripts'), 999);
 
 		add_filter( 'mce_external_plugins',	array($this,'inlinelink_pre_45'));
 	}
